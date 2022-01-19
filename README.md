@@ -4,7 +4,7 @@
 
 
 </span>
-Mit dieser Anleitung ist es Ihnen möglich, eine grafische Übersicht über Ihre Pflanzen zu bekommen. Es werden sowohl die Temperatur und Feuchtigkeitsdaten, sowie die der Pflanze aktuell zur Verfügung stehende Lux Zahl angezeigt.
+Mit dieser Anleitung ist es Ihnen möglich eine grafische Übersicht über Ihre Pflanzen zu bekommen. Es werden sowohl die Temperatur und Feuchtigkeitsdaten, sowie die der Pflanze aktuell zur Verfügung stehende Lux Zahl angezeigt.
 
 
 ## 1. Hardware
@@ -13,40 +13,40 @@ Mit dieser Anleitung ist es Ihnen möglich, eine grafische Übersicht über Ihre
 - USB Adapter Micro-USB
 - 16 GB microSD-Karte<br>
 - Bluetooth Pflanzensensoren (je Pflanze 1 Sensor)<br>
-    von Diverse Herstellern verfügbar. <br>
+    Von diversen Herstellern verfügbar. <br>
     z.B. ohne Wertung: WANFEI, Royal Gardineer oder VegTrug. Alle aufgeführten Sensoren sind baugleich.<br>
-    Eine günstigere Beschaffungsquelle sind diverse Anbieter aus Fernost.
+    Eine günstigere Beschaffungsquelle stellen diverse Anbieter aus Fernost dar.
 
 
 ## 2. Installation des Pi
 
-Damit der Rasberry Pi zum ersten Mal starten kann, muss zunächst die Micro-SD Karte mit dem entsprechenden Betriebssysem installiert werden.
+Damit der Rasberry Pi zum ersten Mal starten kann, muss zunächst die microSD Karte mit dem entsprechenden Betriebssysem installiert werden.
 Dazu wird die SD-Karte in einen PC eingesteckt und mit Hilfe der Software "Pi Installer" installiert.
 
 1.	Download Pi Installer von der Website https://www.raspberrypi.com
 
 2.	Pi Installer starten und unter **"Betriebssystem"** "Raspberry Pi OS Lite" auswählen.
-    Für die Instalation auf einem Pi Zero ist ein Betriebsystem wie Pi OS Lite einer Ubuntu Installation vozuziehen.
+    Für die Installation auf einem Pi Zero ist ein Betriebsystem wie Pi OS Lite einer Ubuntu Installation vorzuziehen.
 
-3.	SD-Karte am Computer eingestecken. Unter **"SD Karte"** die gewünschte SD Karte auswählen.
+3.	SD-Karte am Computer einstecken. Unter **"SD Karte"** die gewünschte SD Karte auswählen.
 
-4.	Mit Strg + Shit + X bzw. Control + Shift + X den Advance Mode öffnen.
+4.	Mit Strg + Shift + X bzw. Control + Shift + X den Advance Mode öffnen.
 
     Einstelllungen nach eigenem Bedarf anpassen
 
     **Hierbei gilt es folgendes zu beachten:**
 
-    - ssh muss aktiviert werden. PW selst wählen.
+    - ssh muss aktiviert werden. Passwort selbst wählen.
         
     -  Wifi muss zumindest bei den Pi Zero Geräten eingerichtet werden. 
-        (Achtung beim Pi Zero hat nur Wifi 4)
+        (Achtung Pi Zero hat nur Wifi 4)
 
 5.	Durch Auswahl der Funkion "Schreiben" fortfahren. Meldung mit "Ja" bestätigen.
 
-6.	Einleigen der SD Karte in den Raspberry Pi, einstecken der Stromversorgung. Der Pi startet nach dem Einstecken der Stromversorung automatisch.
+6.	Einlegen der SD Karte in den Raspberry Pi und einstecken der Stromversorgung. Der Pi startet nach dem Einstecken der Stromversorung automatisch.
 
 7.	Verbindung mit ssh aufbauen. <br>
-    Dazu Terminal öffnen und zum Verbidnungsaufbau folgenden Befehl kopieren und anpassen.
+    Dazu Terminal öffnen und zum Verbindungsaufbau folgenden Befehl kopieren und anpassen.
 
     ```shell
     ssh pi@ip-adresse_des_Pi
@@ -54,7 +54,7 @@ Dazu wird die SD-Karte in einen PC eingesteckt und mit Hilfe der Software "Pi In
 
 	Bsp.: ssh pi@192.168.15.2
 
-    Das benötigte Passwort, ist das Pw, welches unter Punkt 4 selbst gewählt wurde.
+    Das benötigte Passwort wurde hierfür unter Punkt 4 selbst gewählt.
 
 
 ## 3. Installation von Docker inkl. Docker Compose
@@ -70,7 +70,7 @@ Dazu wird die SD-Karte in einen PC eingesteckt und mit Hilfe der Software "Pi In
 
 ## 4. Installation von Go
 
-Go wird benötigt, um mit dem flowercare-exporter verwenden zu können. Da dieser mit Hilfe der Programmiersprache Go Entwickelt wurde.
+Go wird benötigt, um den flowercare-exporter verwenden zu können. Da dieser mit Hilfe der Programmiersprache Go entwickelt wurde.
 
 ```shell
 sudo apt-get install golang
@@ -81,7 +81,7 @@ Ein ggf. angezeigter Hinweis zum Kernel kann ignoriert werden.
 
 ## 5. Installation der Bluetooth Komponenten und des flowercare-exporter
 
-Zum Auslesen der Sensoren Metric wird der in Go programmierte flowercare_exporter verwendet. Dieser ist einfach aufgebaut und ist im Vergleich zu einigen anderen exportern, jüngeren Datums. Was eine möglichst lange kompatibilität mit den Sensoren sicherstellen soll. <br>
+Zum Auslesen der Sensoren Metric wird der in Go programmierte flowercare_exporter verwendet. Dieser ist sehr einfach aufgebaut im Vergleich zu einigen anderen exportern jüngeren Datums, was eine möglichst lange Kompatibilität mit den Sensoren sicherstellen soll. <br>
 https://github.com/xperimental/flowercare-exporter
 
 1.	Installation der Bluetooth-Komponenten
@@ -94,7 +94,7 @@ https://github.com/xperimental/flowercare-exporter
     ```
     Hinweis: Während der Installation ist eine Bestätigung notwendig, diese mit “Y“ bestätigen.
     
-    Restart + erneutes Einloggen erforderlich (Der erneute Login kann etwas dauern)
+    Restart + erneutes Einloggen erforderlich (Der erneute Login kann etwas dauern).
 
 
 2.	Bluetooth Test
@@ -103,11 +103,11 @@ https://github.com/xperimental/flowercare-exporter
     ```shell
     sudo hcitool lescan
     ```
-    Beenden durch strg + c bzw. ctrl + c.
+    Beenden durch Strg + C bzw. Ctrl + C.
 
 3.	Installation von flowercare-exporter
 
-    Download der benötigten Installationsdatein, sowie die Installation in ein neues Verzeichniss "flower-exporter"
+    Download der benötigten Installationsdateien, sowie die Installation in ein neues Verzeichnis "flower-exporter"
 
     ```shell
     git clone https://github.com/xperimental/flowercare-exporter.git
@@ -120,7 +120,7 @@ https://github.com/xperimental/flowercare-exporter
 
 1.	Eigenen Ordner für die Docker Images und Dokumente anlegen
 
-    Anlegen eines Ordners „sensor“ im Homeverzeichnis und Wechsel in dieses Verzeichniss.
+    Anlegen eines Ordners „sensor“ im Homeverzeichnis und Wechsel in dieses Verzeichnis.
 
     ```shell
     sudo mkdir sensor
@@ -175,7 +175,7 @@ https://github.com/xperimental/flowercare-exporter
       Sensor:
         driver: bridge
     ```
-    Beenden mit strg + x bzw. ctrl + x, y, Enter
+    Beenden mit Strg + X bzw. Ctrl + X, Y, Enter
 
 3.	Prometheus config Dokument anlegen
 
@@ -223,7 +223,7 @@ https://github.com/xperimental/flowercare-exporter
 
     Die gefundenen Geräte notieren.
 
-5.	Flowercare-exporter Einrichten
+5.	Flowercare-exporter einrichten
 
     Anlegen einer Service Datei
 
@@ -259,7 +259,7 @@ https://github.com/xperimental/flowercare-exporter
     WantedBy=multi-user.target
     ```
 
-    Nach erstellen und nach jeder Änderung der zuvor erstellten Service-Datei muss diese aktiviert werden:
+    Nach dem Erstellen und nach jeder Änderung, der zuvor erstellten Service-Datei, muss diese aktiviert werden:
     ```shell
     sudo systemctl daemon-reload
     sudo systemctl enable flowercare.service
@@ -271,19 +271,19 @@ https://github.com/xperimental/flowercare-exporter
 
     Der Service sollte nun aktiv sein, ansonsten noch einmal die config prüfen und die Änderung wie zuvor beschrieben aktivieren.
 
-    Status kann mit Strg + c bzw. Crtl + c beendet werden.
+    Status kann mit Strg + C bzw. Crtl + C beendet werden.
 
 ## 8. Prometheus und Grafana einrichten
 
 1.	Prometheus starten
 
-    Mit diesem Befehl wird Prometheus und Grafana das erste Mal heruntergeladen und anhand der zuvor angelegten Konfigurationsdateien voreingestellt.
+    Mit diesem Befehl werden Prometheus und Grafana das erste Mal heruntergeladen und anhand der zuvor angelegten Konfigurationsdateien voreingestellt.
 
     ```shell
     docker-compose up -d
     ```
 
-    Im Browser folgendes Eingeben
+    Im Browser folgendes eingeben:
 
     IP-Adresse_des_Pi:9090
 
@@ -296,7 +296,7 @@ https://github.com/xperimental/flowercare-exporter
 
 2.	Grafana starten
 
-    Im Browser folgendes eingeben
+    Im Browser folgendes eingeben:
 
     IP-Adresse_des_Pi:3000
 
@@ -310,8 +310,8 @@ https://github.com/xperimental/flowercare-exporter
 
 3. Erstellen eines ersten Dashboards
 
-    Da Grafana viele Möglichkeiten zur Gestalltung des Dashboard anbietet und nicht jede einzeln aufgeführt werden kann hier 2 Beispiele zur Gestalltung:
-    Zunächst muss ein neues Dashboard angelegt werden. Dazu im Linken Menü das Plus Auswählen. Über ''Add an empty panel'' gelangt man in das Design Board von Grafana.
+    Da Grafana viele Möglichkeiten zur Gestaltung des Dashboard anbietet und nicht jede einzelne aufgeführt werden kann, hier 2 Beispiele zur Gestaltung:
+    Zunächst muss ein neues Dashboard angelegt werden. Dazu im linken Menü das Plus auswählen. Über ''Add an empty panel'' gelangt man in das Design Board von Grafana.
 
     **Variante A** - Anzeige der akutellen Temperatur und Feuchtigkeit der einzelnen Pflanzen.
 
@@ -327,22 +327,22 @@ https://github.com/xperimental/flowercare-exporter
     ```
 
     Generell können so über + Querry weitere Pflanzen hinzugefügt werden. Bei der Betrachtung der einzelnen Pflanzen gelten je Pflanze eventuell andere Idealwerte, von daher ist eine Erstellung eines Panels je Pflanze empfohlen.
-    Nach der Auswahl der Metric kann auf der Rechten Seite noch der Name der Pflanze, sowie die Idealwerte einer Pflanze einstellt werden.
+    Nach der Auswahl der Metric kann auf der rechten Seite noch der Name der Pflanze, sowie die Idealwerte einer Pflanze eingestellt werden.
     Den Namen in das Feld Title eintragen.
 
-    Die Idealwerte Markiert man mit Hilfe des Threesholds.<br>
-    Dazu benötigt man 3 Bereiche, Base und der erste Wert sind bereits angelegt, den dritten erzeugt man über den Button +Add threeshold.<br>
+    Die Idealwerte markiert man mit Hilfe des Threesholds.<br>
+    Dazu benötigt man 3 Bereiche. Base und der erste Wert sind bereits angelegt, den Dritten erzeugt man über den Button +Add threeshold.<br>
     Die Farbe bei Base wird auf orange gestellt. <br>
     Der Wert oberhalb von Base wird auf den niedrigsten empfohlenen Temperaturwert der Pflanze eingestellt. Im Beispiel der Calathea 12 und die Farbe auf Grün. <br>
-    Den obersten Wert ersetzen wir ensprechend durch den empfohlenen Maximalwert, hier 32 und die stellen wir Farbe rot.
+    Den obersten Wert ersetzen wir ensprechend durch den empfohlenen Maximalwert, hier 32 und stellen die Farbe rot ein.
 
-    Da der Maximalwert der Ansicht aus den existierenden Werten der Metric automatisch einstellt wird und nicht für alle Pflanzen gleiche Werte existren. Empfielt es sich, die Maximal anzeigbaren Werte einheitlich manuell festzulegen. Dazu muss ,ebenfalls im rechten Menü, unter standard options der Wert bei Max festgelegt werden.
+    Da der Maximalwert der Ansicht aus den existierenden Werten der Metric automatisch eingestellt wird und nicht für alle Pflanzen gleiche Werte existieren, empfiehlt es sich, die Maximal anzeigbaren Werte einheitlich manuell festzulegen. Dazu muss, ebenfalls im rechten Menü, unter standard options der Wert bei Max festgelegt werden.
 
     Mit einem Klick auf Apply kommt man in das Dashboard zurück. 
 
     Ein Klick auf den zuvor festgelegten Titel öffnet ein Menü, in dem unter More... - Duplicate das Panel dupliziert werden kann. 
     Zum Ändern eines Panels auf den Titel des Panels klicken und dann Edit wählen.
-    Diese kann dann durch Anpassung des Titels, der Metric und ggf. der Idealwerte angepasst werden. Über das Duplicat empfhielt es sich auch das erste Panel mit Feuchtigkeit anzulegen. Hier muss dann allerdings auch die Metric geändert werden. 
+    Diese kann dann durch Anpassung des Titels, der Metric und ggf. der Idealwerte angepasst werden. Über das Duplicat empfiehlt es sich auch das erste Panel mit Feuchtigkeit anzulegen. Hier muss dann allerdings auch die Metric geändert werden. 
 
     Ein Beispiel für die Feuchtigkeit einer Pflanze:
     ```shell
@@ -353,9 +353,9 @@ https://github.com/xperimental/flowercare-exporter
 
     Die einzelnen Panels können auf dem Dashboard frei verschoben werden.
 
-    Über die Diskette, kann das aktuelle Dashboard gespeichert werden.
+    Über die Diskette kann das aktuelle Dashboard gespeichert werden.
 
-    Über das Zahnrad, kann der Name des Dashboards angepasst werden.
+    Über das Zahnrad kann der Name des Dashboards angepasst werden.
     
     Selbstverständlich kann im Anschluss der Einstellung ein weiteres Dashboard mit der Variante B erstellt werden.
 
@@ -390,8 +390,8 @@ https://github.com/xperimental/flowercare-exporter
     Im Anschluss wieder mit Apply das Fenster schließen.
 
     Optional kann noch der Lux Wert eingebunden werden. Dazu erneut ein Panel duplizieren.
-    Die Metric zu flowercare_brightness_lux{...} ändern. Da die Lux stark schwankt, kann man hier auch einen größeren Interval verwenden. den passt man unter der Metricquelle im Feld min Step an. Empfehlung 30m für 30 min. <br>
-    Auf der Rechten Seite wird erneut der Titel angepasst, unter Axis wird von Linar auf Logarithmic base 10 umgestellt. Der Min Wert auf 1 stellen und der Max Wert auf 10.000. Im Anschluss mit Apply bestätigten.
+    Die Metric zu flowercare_brightness_lux{...} ändern. Da die Lux stark schwankt, kann man hier auch einen größeren Intervall verwenden. Dieses passt man unter der Metricquelle im Feld min Step an. Empfehlung 30m für 30 min. <br>
+    Auf der rechten Seite wird erneut der Titel angepasst, unter Axis wird von Linar auf Logarithmic base 10 umgestellt. Den Min Wert auf 1 stellen und den Max Wert auf 10.000. Im Anschluss mit Apply bestätigen.
 
     Das Dashboard kann durch verschieben, vergrößern und verkleinern der Panele, mit Hilfe des Mauszeigers, angepasst werden. Ein Beispeil dazu kann man im vorherigen Screenshot sehen.
 
